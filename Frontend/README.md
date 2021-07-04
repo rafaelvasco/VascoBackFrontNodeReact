@@ -8,4 +8,4 @@ How to Install:
 > 
 > Run `yarn install`
 > 
-> Run `yarn dev` to start
+> Run `yarn dev` to start. Wait for compiled successfuly message.
