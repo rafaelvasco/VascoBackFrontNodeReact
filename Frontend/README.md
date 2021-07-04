@@ -1,4 +1,4 @@
-## Vasco Hamburgueria Backend
+## Vasco Hamburgueria Frontend
 
 How to Install:
 
@@ -6,5 +6,3 @@ How to Install:
 > Install Yarn if not installed: `npm i -g yarn`
 > Run `yarn install`
 > Run `yarn dev` to start
-> Run `yarn test` to run tests
-
