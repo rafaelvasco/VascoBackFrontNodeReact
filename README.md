@@ -45,3 +45,55 @@ Na página Admin podem ser alteradas as promoções ativas. Qualquer número de 
 
 ---
 Fim
+
+---
+
+---
+
+## Vasco Hamburgueria
+
+Design:
+
+This project uses the dinero.js library to manipulate and format monetary values. Implementing financial operations manually makes the code more vulnerable to rounding errors.
+
+Project defines an API using the following layer pattern:
+
+Routes: Defines the routes of the API. Each route definition file defines the URLS of each route and the method to be executed from the respective Controller.
+
+Controllers: Defines the validation logic, and processing of Requests and Responses for each Route. The logical processing itself for each route is executed by a Service or Repository. 
+
+Services: Receives the Request objects from the Controllers, gets data from the database through the Repositories and perform some processing on this data.
+
+Repositories: Get data from the database and transform it to a format suitable to be worked on by the Services.
+
+Models: Define the Application Data Types/Models. Either they are internally processed data only. Or they are also exchange data with the Frontend.
+
+Middleware: Defines utility and intermediate methods used in the processing by Services and Controllers.
+
+Config: Defines global settings of the application.
+
+In the folder __tests__ the tests that validate the API are present.
+
+---
+
+Frontend: 
+
+The frontend is divided in simplified form into :
+
+Pages: Represent a resource that can be accessed via URL.
+Components: Represent discrete blocks of a Page that receives values, processes, and makes requests to the Backend. In this example the requests are made directly by the components. In a larger application, it is a good idea to encapsulate the requests in Service/Resource etc classes, which in turn would receive the requests from the components and return the responses in the appropriate format.
+
+A page is nothing more than a component accessible via an URL.
+
+In this example the frontend shows the main menu on the index.tsx home page.
+
+The main menu is a list of ProductCard components. Each ProductCard shows the product's data such as photo, name and value. On the home page the value shown is the base value, without any promotion processing.
+
+Clicking on a product in the Main Menu calls up a dynamic page /pages/order/[productId]. When calling this page from a Link such as: /pages/order/2, the page component then shows the Product data and brings the mutated Price by the active Sale ids.
+
+By clicking on the "Build Your Own" link on the home page, the user can add any number of ingredients to the Snack. There are no limits in this example. The total value is automatically updated each time the user changes the quantities. This value changes according to the active Sale ids.
+
+On the Admin page the active sale ids can be changed. Any number of promotions can be activated at the same time. The values shown on pages/order/[] and pages/custom are mutated from these Sale ids..
+
+---
+End
